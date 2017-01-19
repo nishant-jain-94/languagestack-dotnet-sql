@@ -1,0 +1,12 @@
+version: '2'
+services:
+  web:
+    image: jainnish94/languagestack-asp-mvc
+    depends_on:
+      - sqlserver
+    command: [tail, -f, /dev/null]
+  sqlserver:
+    image: microsoft/mssql-server-linux
+    environment:
+        - ACCEPT_EULA=Y
+        - SA_PASSWORD=my(!)StrongPassword
